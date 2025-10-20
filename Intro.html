@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halloween Intro</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: #FFA500;
+      font-family: "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    img {
+      width: 70%;
+      max-width: 400px;
+      transition: opacity 0.3s ease;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 1.8em;
+      text-shadow: 0 0 10px #ff8c00;
+    }
+  </style>
+</head>
+<body>
+  <img id="pumpkin" src="images/pumpkin_off.png" alt="Pumpkin">
+  <h1>ハロウィンナイトへようこそ…</h1>
+
+  <script>
+    const images = [
+      "images/pumpkin_off.png",
+      "images/pumpkin_half.png",
+      "images/pumpkin_on.png"
+    ];
+    let index = 0;
+    const pumpkin = document.getElementById("pumpkin");
+
+    // 点滅アニメーション（0.4秒ごとに切り替え）
+    const flicker = setInterval(() => {
+      pumpkin.src = images[index];
+      index = (index + 1) % images.length;
+    }, 400);
+
+    // 5秒後にギャラリーに自動遷移
+    setTimeout(() => {
+      clearInterval(flicker);
+      window.location.href = "index.html";
+    }, 5000);
+  </script>
+</body>
+</html>
