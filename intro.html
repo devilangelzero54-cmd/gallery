@@ -48,11 +48,11 @@
     let index = 0;
     const pumpkin = document.getElementById("pumpkin");
 
-    // 点滅アニメーション（0.5秒ごとに切り替え）
+    // 点滅アニメーション（0.3秒ごとに切り替え）
     const flicker = setInterval(() => {
       pumpkin.src = images[index];
       index = (index + 1) % images.length;
-    }, 500);
+    }, 300);
 
     // 5秒後にギャラリーに自動遷移
     setTimeout(() => {
